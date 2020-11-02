@@ -1,0 +1,83 @@
+body{
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  min-height: 100px;
+  width: 400px;
+  margin: 100px;
+  background-color: lightgray;
+  border: solid 2px grey;
+  border-radius: 3px;
+}
+
+.container h1 {
+  margin-left: 10px;
+}
+
+.container form {
+  margin: 10px;
+}
+
+.item-text {
+  align-items: center;
+  margin-left: 5px;
+  width: 310px;
+  height: 30px;
+  outline: none;
+  border: none;
+  border-radius: 3px;
+}
+
+.done-btn {
+  background-color: green;
+  color: #ffffff;
+  border: none  ;
+  border-radius: 3px;
+  margin: 2px;
+  
+  margin-top: 8px;
+}
+
+.delet-btn {
+  background-color: red;
+  color: #ffffff;
+  border: none  ;
+  border-radius: 3px;
+  margin: 2px;
+}
+
+.item-field {
+  align-items: center;
+  margin: 10px;
+  height: 35px;
+  background-color: #ffffff;
+  border-radius: 3px;
+}
+.task {
+  margin-left: 20px;
+  font-weight: bolder;
+}
+.task-add {
+  margin-left: 30px;
+  height: 30px;
+  width: 288px;
+  border: none;
+  border-radius: 3px;
+  outline: none;
+}
+
+.save-btn {
+  border: none;
+  background-color: blue;
+  color: white;
+  border-radius: 3px;
+  height: 30px;
+  margin-left: 308px;
+  outline: none;
+}
+
+.doneClass {
+  text-decoration: line-through;
+}
