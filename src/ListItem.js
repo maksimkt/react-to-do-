@@ -1,4 +1,5 @@
 import React from 'react';
+import cx from 'classnames'
 
 function ListItems(props){
     const items = props.items;
@@ -7,7 +8,11 @@ function ListItems(props){
             return <div className = "list" key={item.key}>
                 <p className = 'item-field'>
                     <input type="text"
-                    className='item-text '
+                    className={cx({
+                        'item-text ':true,
+                        'completed': item.completed
+                    })}
+                    
                     id={item.key}
                     value={item.text}
                     onChange={
@@ -18,7 +23,7 @@ function ListItems(props){
                     />
                  <span>
                     <button className="done-btn"
-                    >✔</button>
+                    onClick={() => props.handleClick(item.key, !item.completed)}>✔</button>
                  </span>
                  <span>
                     <button className="delet-btn"

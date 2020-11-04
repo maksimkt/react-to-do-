@@ -12,15 +12,16 @@ class App extends React.Component{
       items:[],
       currentItem:{
         text:'',
-        key:''
+        key:'',
+        completed:false
       },
-      done:false
-    
+      completed:false
     }
     this.handleInput = this.handleInput.bind(this)
     this.addItem = this.addItem.bind(this)
     this.deleteItem = this.deleteItem.bind(this)
     this.setUpdate = this.setUpdate.bind(this)
+    this.handleClick = this.handleClick.bind(this)
     
   }
 
@@ -29,7 +30,7 @@ class App extends React.Component{
     this.setState({
       currentItem:{
         text: e.target.value,
-        key:uuidv4()
+        key: uuidv4()
       }
     })
   }
@@ -37,7 +38,7 @@ class App extends React.Component{
     e.preventDefault();
     const newItem = this.state.currentItem;
     
-    if(newItem !==""){
+    if(newItem !==" "){
       const newItems =[...this.state.items, newItem];
       this.setState({
         items:newItems,
@@ -55,6 +56,14 @@ class App extends React.Component{
         items:filter
       })
   }
+
+  handleClick(key, isDone){
+    const items = this.state.items.map(item => (item.key === key) ? {...item, completed: isDone} : item);
+    this.setState({
+      items:items
+    })
+  }  
+  
 
   setUpdate(text, key){
     const items = this.state.items;
@@ -75,7 +84,7 @@ class App extends React.Component{
           
           items={this.state.items}
           deleteItem={this.deleteItem}
-          done={this.doneTask}
+          handleClick = {this.handleClick}
           setUpdate={this.setUpdate}>
             
         </ListItems>
